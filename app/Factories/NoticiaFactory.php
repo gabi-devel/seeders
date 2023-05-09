@@ -19,7 +19,8 @@ class NoticiaFactory {
             "id" => $faker->randomNumber(2),
             "titulo" => $faker->sentence,
             "cuerpo" => $faker->paragraphs(3, true),
-            "imagen" => $faker->optional()->imageUrl(300, 300),
+            /* "imagen" => $faker->optional()->imageUrl(300, 300), */ // Imagen opcional: a veces si, a veces no
+            "imagen" => $faker->imageUrl(300, 300),
             "autor" => $faker->name,
         ];
     }

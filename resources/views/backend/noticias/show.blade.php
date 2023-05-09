@@ -7,6 +7,7 @@
     <li class="nav-item"><a href="#" class="nav-link">Eliminar</a></li>
 @endsection
 @section('content')
+<div class="jumbotron"><div class="container">
     <div class="card mb-3">
         <div class="row no-gutters">
             <div class="col-md-5">
@@ -29,4 +30,5 @@
             </div>
         </div>
     </div>
+</div></div>
     @endsection

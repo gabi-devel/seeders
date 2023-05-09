@@ -2,6 +2,7 @@
 @section('title', __('noticias.index'))
 
 @section('content')
+<div class="jumbotron"><div class="container">
     @forelse($noticias as $noticia)
         @if($loop->iteration % 2 != 0) {{-- Se puede cambiar por 4 --}}
             <div class="row">
@@ -41,4 +42,5 @@
         @endforelse
     </div>
     <hr>
+</div></div>
 @endsection

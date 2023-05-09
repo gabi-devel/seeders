@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Factories\NoticiaFactory;
+use App\Models\Noticia;
 
 class NoticiaController extends Controller
 {
     public function index() {
-        $noticias = NoticiaFactory::generarNoticias(30);
-        return view('backend.noticias.index', compact('noticias'));
+        /* $noticias = NoticiaFactory::generarNoticias(30);
+        return view('backend.noticias.index', compact('noticias')); */
+        $noticias = NoticiaFactory::hacerNoticia(22);
+        $noticias = Noticia::whereIn('id', range(3, 22))->orderByDesc('id')->get();
+        return view('backend.noticias.show-section-noticias', compact('noticias'));
     }
 
     public function show($id) {
@@ -21,4 +25,13 @@ class NoticiaController extends Controller
         );
         return view('backend.noticias.show', compact('noticia'));
     }
+
+    /* public function showBlog() {
+        //$noticias = Noticia::all();
+        //dd($noticias);
+
+        $noticias = NoticiaFactory::hacerNoticia(22);
+        $noticias = Noticia::whereIn('id', range(3, 22))->orderByDesc('id')->get();
+        return view('backend.noticias.show-section-noticias', compact('noticias'));
+    } */
 }

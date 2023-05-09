@@ -26,3 +26,7 @@ Route::get('/noticias', [NoticiaController::class, 'index'])->name('noticias.ind
 Route::get('/noticias/{noticia}', [NoticiaController::class, 'show'])->name('noticias.show');
 
 Route::get('/hola-controller/{nombre?}', [SaludarController::class, 'saludar'])->name('hola-controller.saludar');
+
+//Route::get('blog', 'NoticiaController@showBlog')->name('blog');
+//Route::get('/blog', [NoticiaController::class, 'showBlog'])->name('noticias.blog');
+Route::resource('/blog', NoticiaController::class);

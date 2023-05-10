@@ -34,12 +34,14 @@ class NoticiasTableSeeder extends Seeder
         $n->delete();
         $n = Noticia::destroy(1);
 
-        for ($i=1; $i <= 20; $i++) {
+        /* for ($i=1; $i <= 20; $i++) {
             $n = new Noticia();
             $n->titulo = "Noticia $i";
             $n->cuerpo = file_get_contents('http://loripsum.net/api');
             $n->autor = User::all()->random()->id;
             $n->save();
-        }
+        } */
+
+        Noticia::factory()->count(10)->create();
     }
 }
